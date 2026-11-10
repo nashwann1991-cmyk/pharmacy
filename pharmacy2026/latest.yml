@@ -1,0 +1,8 @@
+version: 1.0.0
+files:
+  - url: pharmacy-setup-1.0.0.exe
+    sha512: psKJdI1bClgD8vD4oFnCdh//B0+yKxwaY/ArcJtb0RVF6puuxpbhW4MxiLbIHgkilRgrrl3QSUtCJpQ6MTKL6Q==
+    size: 145902787
+path: pharmacy-setup-1.0.0.exe
+sha512: psKJdI1bClgD8vD4oFnCdh//B0+yKxwaY/ArcJtb0RVF6puuxpbhW4MxiLbIHgkilRgrrl3QSUtCJpQ6MTKL6Q==
+releaseDate: '2026-11-05T20:25:50.877Z'

@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@media print {
+  /* Page configuration */
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  /* Ensure backgrounds, gradients, and colors are preserved when printing */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html, body {
+    background: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide normal UI navigation, headers, footers and anything flagged as print:hidden */
+  nav,
+  header,
+  footer,
+  .print\:hidden,
+  .print-hidden {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+
+
+  /* Reset modal backdrops and fixed wrappers to static ONLY when not marked print:hidden */
+  .fixed:not(.print\:hidden):not(.print-hidden),
+  [class*="fixed"]:not(.print\:hidden):not(.print-hidden) {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  .max-h-\[95vh\],
+  .max-h-\[92vh\],
+  .max-h-\[90vh\],
+  .max-h-80,
+  .overflow-hidden,
+  .overflow-y-auto {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide background elements by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Make target printable reports and receipts visible */
+  #pharmacy-receipt-print,
+  #pharmacy-receipt-print *,
+  #pharmacy-official-report-print,
+  #pharmacy-official-report-print *,
+  #suppliers-official-report-print,
+  #suppliers-official-report-print *,
+  #pharmacy-daily-income-print,
+  #pharmacy-daily-income-print *,
+  #pharmacy-return-receipt-print,
+  #pharmacy-return-receipt-print * {
+    visibility: visible;
+  }
+
+  /* 80mm Thermal POS Receipt */
+  #pharmacy-receipt-print,
+  #pharmacy-return-receipt-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm !important;
+    margin: 0 auto;
+    padding: 8px;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* A4 Full Width Reports: Strict static positioning prevents browser duplicate page stamp */
+  #pharmacy-official-report-print,
+  #suppliers-official-report-print,
+  #pharmacy-daily-income-print {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    color: black !important;
+    overflow: visible !important;
+    display: block !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Elements to show as block during printing */
+  .print\:block {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Elements to show as grid during printing */
+  .print\:grid {
+    display: grid !important;
+    visibility: visible !important;
+  }
+
+  /* Elements to show as flex during printing */
+  .print\:flex {
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  /* Page break rules for clean tables and cards */
+  table, tr, td, th {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Final enforcement: print:hidden always wins and completely eliminates the element */
+  .print\:hidden,
+  .print-hidden,
+  .print\:hidden *,
+  .print-hidden * {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

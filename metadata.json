@@ -1,0 +1,6 @@
+{
+  "name": "Pharmacy Accounting & POS System",
+  "description": "Comprehensive accounting and sales management system for pharmacies, drug inventories, daily shifts, admin control panel, and offline-ready backups.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
